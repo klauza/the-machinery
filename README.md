@@ -1,3 +1,7 @@
+
+**the-machinery** is a log file app which contains tasks to fix for mechanics of the car production company. <br/>
+The company is settled on the suburbs, has 20 bays where work is continuously taking place.
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -9,8 +13,8 @@ In the project directory, you can run:
 Runs the app in the development mode.<br>
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+### `npm run dev`
+will start development local server and also local json db
 
 ### `npm test`
 
