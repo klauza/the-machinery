@@ -1,4 +1,4 @@
-import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG } from './types';
+import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG, DELETE_LOG } from './types';
 
 // export const getLogs = () => {
 //   // REDUX THUNK - allows us to return a function which get passed in a dispatch method which we pass to reducer 
@@ -58,8 +58,30 @@ export const addLog = (log) => async dispatch => {
       payload: err.response.data
     })
   }
+}
+
+// delete log
+export const deleteLog = (id) => async dispatch => {
+  try{
+    setLoading();
+    await fetch(`/logs/${id}`, {
+      method: 'DELETE'
+    });
+
+    dispatch({
+      type: DELETE_LOG,
+      payload: id
+    });
+
+  }catch(err){
+    dispatch({
+      type: LOGS_ERROR,
+      payload: err.response.data
+    })
+  }
    
 }
+
 
 // set loading to true
 export const setLoading = () => {
