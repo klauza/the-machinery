@@ -1,8 +1,9 @@
 
-**the-machinery** is a task log app which contains commissioned tasks to fix for mechanics of the car production company. <br/>
-The company has 20 bays and 50 engineer workers.
+**the-machinery** is a task log app which contains commissioned tasks to fix for mechanics of the car production company.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This project is being made in learning purposes along Udemy lectures.
 
 ## Available Scripts
 

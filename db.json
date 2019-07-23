@@ -1,25 +1,25 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed the pipe no.5",
+      "message": "Fixed the main switch in bay 12",
       "attention": false,
-      "date": "03-03-2020",
-      "tech": "Sam Smith"
+      "tech": "John Doe",
+      "date": "2019-07-23T18:34:30.595Z",
+      "id": 1
     },
     {
-      "id": 2,
-      "message": "Repfubrished the gears from the main engine",
+      "message": "The cutting machine in bay 3 won't start",
       "attention": true,
-      "date": "04-03-2020",
-      "tech": "John Doe"
+      "tech": "John Doe",
+      "date": "2019-07-23T18:35:23.790Z",
+      "id": 2
     },
     {
-      "id": 3,
-      "message": "Bay-5 machine won't start",
+      "message": "Bay 10 lack of extinguisher",
       "attention": true,
-      "date": "04-03-2020",
-      "tech": "James Black"
+      "tech": "John Doe",
+      "date": "2019-07-23T18:36:52.603Z",
+      "id": 3
     }
   ],
   "techs": [
