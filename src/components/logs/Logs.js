@@ -1,26 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import LogItem from './LogItem';
 import Preloader from '../layout/Preloader';
+import { connect } from 'react-redux';    // whenever you want to interact with redux from a component, you want to bring a 'connect'. So whenever you bring connect, you bring redux to that component
+import { getLogs } from '../../actions/logActions';
 
-const Logs = () => {
-  const [logs, setLogs] = useState([]); // create state
-  const [loading, setLoading] = useState(false);
+const Logs = ({ log: {logs, loading}, getLogs }) => {
 
   useEffect(() => {
     getLogs();
     //eslint-disable-next-line
   }, []);
 
-  const getLogs = async () => {
-    setLoading(true);
-    const res = await fetch('/logs');
-    const data = await res.json();
-
-    setLogs(data);
-    setLoading(false);
-  }
-
-  if(loading){
+  if(loading || logs === null){
     return <Preloader />
   }
 
@@ -37,4 +28,12 @@ const Logs = () => {
   )
 }
 
-export default Logs
+// connect takes two things
+// 1 mapstatetoprops - use it, if you want to get anything from your up level state. So you bring it as a prop
+const mapStateToProps = state => ({
+  log: state.log // log is just a name of prop, name it however you want. 
+  // state.log pertains to our root reducer in reducers/index.js
+  // it is a whole state
+
+}) 
+export default connect(mapStateToProps, { getLogs })(Logs); 
