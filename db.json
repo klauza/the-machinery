@@ -1,25 +1,25 @@
 {
   "logs": [
     {
+      "id": 1,
       "message": "Fixed the main switch in bay 12",
       "attention": false,
-      "tech": "John Doe",
-      "date": "2019-07-23T18:34:30.595Z",
-      "id": 1
+      "tech": "James Black",
+      "date": "2019-07-23T21:11:25.230Z"
     },
     {
+      "id": 2,
       "message": "The cutting machine in bay 3 won't start",
       "attention": true,
       "tech": "John Doe",
-      "date": "2019-07-23T18:35:23.790Z",
-      "id": 2
+      "date": "2019-07-23T21:10:53.614Z"
     },
     {
+      "id": 3,
       "message": "Bay 10 lack of extinguisher",
       "attention": true,
-      "tech": "John Doe",
-      "date": "2019-07-23T18:36:52.603Z",
-      "id": 3
+      "tech": "Sam Smith",
+      "date": "2019-07-23T21:11:21.996Z"
     }
   ],
   "techs": [

@@ -48,9 +48,9 @@ const AddLogModal = ({ addLog }) => {
           <div className="input-field">
             <select name="tech" value={tech} className="browser-default" onChange={e => setTech(e.target.value)}>
               <option value="" disabled>Select Technician</option>
-              <option value="John Doe">Sam Smith</option>
+              <option value="Sam Smith">Sam Smith</option>
               <option value="John Doe">John Doe</option>
-              <option value="John Doe">James Black</option>
+              <option value="James Black">James Black</option>
             </select>
           </div>
         </div>

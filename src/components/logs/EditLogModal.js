@@ -8,7 +8,7 @@ const EditLogModal = ({ current, updateLog }) => {
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
 
-  useEffect(() => {
+  useEffect(() => {   // fill the form with 'current state'
     if(current) {
       setMessage(current.message);
       setAttention(current.attention);
@@ -54,9 +54,9 @@ const EditLogModal = ({ current, updateLog }) => {
           <div className="input-field">
             <select name="tech" value={tech} className="browser-default" onChange={e => setTech(e.target.value)}>
               <option value="" disabled>Select Technician</option>
-              <option value="John Doe">Sam Smith</option>
+              <option value="Sam Smith">Sam Smith</option>
               <option value="John Doe">John Doe</option>
-              <option value="John Doe">James Black</option>
+              <option value="James Black">James Black</option>
             </select>
           </div>
         </div>
