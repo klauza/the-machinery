@@ -12,9 +12,12 @@ const AddTechModal = ({ addTech }) => {
     if(firstName === '' || lastName === ''){
       M.toast({ html: 'Please enter the first and last name'})
     } else {
+      let both = `${firstName}${lastName}`;
+      
       addTech({
         firstName,
-        lastName
+        lastName,
+        both
       });
 
       M.toast({ html: `${firstName} ${lastName} was added as a tech`});

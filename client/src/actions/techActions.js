@@ -24,7 +24,6 @@ export const getTechs = () => async dispatch => {
 export const addTech = (tech) => async dispatch => {
   try{
     setLoading();
-
     const res = await fetch('/api/techs', {
       method: 'POST',
       body: JSON.stringify(tech),

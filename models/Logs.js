@@ -11,7 +11,7 @@ const LogsSchema = mongoose.Schema({
   },
   attention:{
     type: Boolean,
-    default: true
+    default: false
   },
   date:{
     type: Date,

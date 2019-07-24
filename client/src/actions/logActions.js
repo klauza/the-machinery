@@ -39,15 +39,16 @@ export const getLogs = () => async dispatch => {
 export const addLog = (log) => async dispatch => {
   try{
     setLoading();
-
-    const res = await fetch('/api/logs', {
+    console.log(log);
+    
+    let res = await fetch('/api/logs', {
       method: 'POST',
       body: JSON.stringify(log),
       headers: {
         'Content-Type': 'application/json'
       }
     });
-    const data = await res.json();
+    let data = await res.json();
     dispatch({
       type: ADD_LOG,
       payload: data
@@ -87,7 +88,7 @@ export const updateLog = (log) => async dispatch => {   // it takes updated vers
   try{
     setLoading();
 
-    const res = await fetch(`/api/logs/${log.id}`, {
+    const res = await fetch(`/api/logs/${log._id}`, {
       method: 'PUT',
       body: JSON.stringify(log),
       headers: {
@@ -96,7 +97,7 @@ export const updateLog = (log) => async dispatch => {   // it takes updated vers
     });
 
     const data = await res.json();
-
+   
     dispatch({
       type: UPDATE_LOG,
       payload: data
