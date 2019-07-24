@@ -5,6 +5,18 @@ const { check, validationResult } = require('express-validator');
 
 const Tech = require('../models/Tech');
 
+// @route GET api/techs
+router.get('/', async (req, res) => {
+  try{
+    const techs = await Tech.find();
+    // return res.status(200).send({});
+    res.json(techs);
+  } catch (err){
+    console.error(err.message);
+    res.status(500).send('server error!!!');
+  }
+});
+
 // @route POST api/techs
 router.post('/', [
   check('firstName', 'Please add a first name').not().isEmpty(),
@@ -39,6 +51,23 @@ async (req, res) => {
   } catch (err) {
     console.error(err.message);
     res.status(500).send('server Error!');
+  }
+});
+
+// @route DELETE api/techs/:id
+router.delete('/:id', async (req, res) => {
+  try{
+    let tech = await Tech.findById(req.params.id);
+
+    if(!tech) return res.status(404).json({ msg: "tech does not exist"});
+
+    await Tech.findByIdAndRemove(req.params.id);
+
+    res.json({msg: "tech deleted"});
+
+  } catch(err){
+    console.error(err.message);
+    res.status(500).send('server error');
   }
 });
 
