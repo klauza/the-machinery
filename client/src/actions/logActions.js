@@ -15,10 +15,11 @@ import { GET_LOGS, SET_LOADING, LOGS_ERROR, ADD_LOG, DELETE_LOG, SET_CURRENT, CL
 // }
 // after refactor:
 export const getLogs = () => async dispatch => {
+  
   try{
     setLoading();
-
-    const res = await fetch('/logs');
+    
+    const res = await fetch('/api/logs');
     const data = await res.json();
     dispatch({
       type: GET_LOGS,
@@ -28,7 +29,7 @@ export const getLogs = () => async dispatch => {
   }catch(err){
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText
+      payload: err.response
     })
   }
    
@@ -39,7 +40,7 @@ export const addLog = (log) => async dispatch => {
   try{
     setLoading();
 
-    const res = await fetch('/logs', {
+    const res = await fetch('/api/logs', {
       method: 'POST',
       body: JSON.stringify(log),
       headers: {
@@ -55,7 +56,7 @@ export const addLog = (log) => async dispatch => {
   }catch(err){
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText
+      payload: err.response
     })
   }
 }
@@ -64,7 +65,7 @@ export const addLog = (log) => async dispatch => {
 export const deleteLog = (id) => async dispatch => {
   try{
     setLoading();
-    await fetch(`/logs/${id}`, {
+    await fetch(`/api/logs/${id}`, {
       method: 'DELETE'
     });
 
@@ -76,7 +77,7 @@ export const deleteLog = (id) => async dispatch => {
   }catch(err){
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText
+      payload: err.response
     })
   }
 }
@@ -86,7 +87,7 @@ export const updateLog = (log) => async dispatch => {   // it takes updated vers
   try{
     setLoading();
 
-    const res = await fetch(`/logs/${log.id}`, {
+    const res = await fetch(`/api/logs/${log.id}`, {
       method: 'PUT',
       body: JSON.stringify(log),
       headers: {
@@ -104,7 +105,7 @@ export const updateLog = (log) => async dispatch => {   // it takes updated vers
   }catch(err){
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText
+      payload: err.response
     })
   }
 }
@@ -114,7 +115,7 @@ export const searchLogs = (text) => async dispatch => {
   try{
     setLoading();
 
-    const res = await fetch(`/logs?q=${text}`);
+    const res = await fetch(`/api/logs?q=${text}`);
     const data = await res.json();
     dispatch({
       type: SEARCH_LOGS,
@@ -124,7 +125,7 @@ export const searchLogs = (text) => async dispatch => {
   }catch(err){
     dispatch({
       type: LOGS_ERROR,
-      payload: err.response.statusText
+      payload: err.response
     })
   }
    
