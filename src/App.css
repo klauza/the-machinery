@@ -1,0 +1,7 @@
+body{
+  height: 100vh;
+  background: url('./media/bg.jpg');
+  background-position: 0 right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
