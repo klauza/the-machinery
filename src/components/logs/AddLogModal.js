@@ -12,8 +12,8 @@ const AddLogModal = ({ addLog }) => {
   const [bay, setBay] = useState('');
 
   const onSubmit = () => {
-    if(message === '' || tech === ''){
-      M.toast({ html: 'Please enter a message and technician '})
+    if(message === '' || tech === '' || bay === ''){
+      M.toast({ html: 'Please put all data'})
     } else {
       const newLog = {
         message,
@@ -37,13 +37,13 @@ const AddLogModal = ({ addLog }) => {
     <div id='add-log-modal' className="modal" style={modalStyle}>
 
       <div className="modal-content">
-        <h4>Enter System Log</h4>
+        <h4>Create new task</h4>
 
         <div className="row">
           <div className="input-field">
             <input type="text" name="message" value={message} onChange={e => setMessage(e.target.value)} />
             <label htmlFor="message" className="active">
-              Log Message
+              Message
             </label>
           </div>
         </div>
@@ -87,7 +87,7 @@ const AddLogModal = ({ addLog }) => {
       </div>
 
       <div className="modal-footer">
-        <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-green btn">Enter</a>
+        <a href="#!" onClick={onSubmit} className="modal-close waves-effect waves-green btn">Create</a>
       </div>
     </div>
   );

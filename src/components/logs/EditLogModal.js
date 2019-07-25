@@ -47,7 +47,7 @@ const EditLogModal = ({ current, updateLog }) => {
     <div id='edit-log-modal' className="modal" style={modalStyle}>
 
       <div className="modal-content">
-        <h4>Enter System Log</h4>
+        <h4>Edit this task</h4>
 
         <div className="row">
           <div className="input-field">
