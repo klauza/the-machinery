@@ -1,25 +1,44 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Fixed the main switch in bay 12",
-      "attention": false,
-      "tech": "James Black",
-      "date": "2019-07-23T21:11:25.230Z"
-    },
-    {
-      "id": 2,
-      "message": "The cutting machine in bay 3 won't start",
-      "attention": true,
-      "tech": "John Doe",
-      "date": "2019-07-23T21:10:53.614Z"
-    },
-    {
-      "id": 3,
-      "message": "Bay 10 lack of extinguisher",
+      "message": "Need someone experienced urgently to fix turbo",
       "attention": true,
       "tech": "Sam Smith",
-      "date": "2019-07-23T21:11:21.996Z"
+      "bay": "Bay 7",
+      "date": "2019-07-25T15:37:42.112Z",
+      "id": 1
+    },
+    {
+      "message": "Extinguisher needed",
+      "attention": false,
+      "tech": "James Black",
+      "bay": "Bay 1",
+      "date": "2019-07-25T15:38:07.754Z",
+      "id": 2
+    },
+    {
+      "message": "Spare parts to takeaway from Renault Clio mk2",
+      "attention": false,
+      "tech": "James Black",
+      "bay": "Bay 1",
+      "date": "2019-07-25T15:40:07.783Z",
+      "id": 3
+    },
+    {
+      "message": "Need 3 toyota wheels 15 inch",
+      "attention": true,
+      "tech": "Roland Moon",
+      "bay": "Bay 4",
+      "date": "2019-07-25T15:42:27.873Z",
+      "id": 4
+    },
+    {
+      "id": 5,
+      "message": "Clutch in Vauxhall needs to be fixed ASAP!",
+      "attention": true,
+      "tech": "Xaviery Kervoz",
+      "bay": "Bay 5",
+      "date": "2019-07-25T15:46:41.525Z"
     }
   ],
   "techs": [
@@ -37,6 +56,16 @@
       "id": 3,
       "firstName": "James",
       "lastName": "Black"
+    },
+    {
+      "firstName": "Roland",
+      "lastName": "Moon",
+      "id": 4
+    },
+    {
+      "firstName": "Xaviery",
+      "lastName": "Kervoz",
+      "id": 5
     }
   ]
 }

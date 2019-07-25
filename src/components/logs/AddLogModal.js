@@ -9,6 +9,7 @@ const AddLogModal = ({ addLog }) => {
   const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
   const [tech, setTech] = useState('');
+  const [bay, setBay] = useState('');
 
   const onSubmit = () => {
     if(message === '' || tech === ''){
@@ -18,6 +19,7 @@ const AddLogModal = ({ addLog }) => {
         message,
         attention,
         tech,
+        bay,
         date: new Date()
       }
       addLog(newLog);
@@ -27,6 +29,7 @@ const AddLogModal = ({ addLog }) => {
       setMessage('');
       setTech('');
       setAttention(false);
+      setBay('');
     }
   }
 
@@ -64,6 +67,23 @@ const AddLogModal = ({ addLog }) => {
             </p>
           </div>
         </div>
+
+        <div className="row">
+          <div className="input-field">
+            <select name="bay" value={bay} className="browser-default" onChange={e => setBay(e.target.value)}>
+              <option value="" disabled>Select Bay</option>
+                <option value={`Bay 1`}>Bay 1</option>
+                <option value={`Bay 2`}>Bay 2</option>
+                <option value={`Bay 3`}>Bay 3</option>
+                <option value={`Bay 4`}>Bay 4</option>
+                <option value={`Bay 5`}>Bay 5</option>
+                <option value={`Bay 6`}>Bay 6</option>
+                <option value={`Bay 7`}>Bay 7</option>
+                <option value={`Bay 8`}>Bay 8</option>
+            </select>
+          </div>
+        </div>
+
       </div>
 
       <div className="modal-footer">
